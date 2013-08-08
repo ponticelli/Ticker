@@ -62,7 +62,27 @@
  }
 
  .tile {
-    padding:20px 10px;   
+    padding:20px 2px;   
+ }
+
+ .tile.extra_margin {
+    margin-left: 30px;
+ }
+
+ .tile div.positive {
+    background: url('img/positive.png');
+    width:32px;
+    height:57px;
+    float:left;
+    margin: 0 10px 0 0;
+ }
+
+ .tile div.negative {
+    background: url('img/negative.png');
+    width:29px;
+    height:55px;
+    float:left;
+    margin: 0 10px 0 0;
  }
 
  .tile:after {
@@ -95,7 +115,7 @@
  }
 
  .bignumber {
-   font-size: 3em; 
+   font-size: 2em; 
  }
 
  span.positive {

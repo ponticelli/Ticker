@@ -11,7 +11,7 @@ define([], function () {
     //poorman's template engine
     _this.renderData = function(marketData) {
       var templateWithData = $template.html()
-                            .replace(/{{(.*)}}/g, function(match, property) 
+                            .replace(/{{([a-z0-9A-Z_\-]*)}}/g, function(match, property) 
                             {
                               return marketData.get(property) || "";
                             });
@@ -23,11 +23,11 @@ define([], function () {
     }
 
     _this.preRender = function () {
-
+      //show loading
     }
 
     _this.postRender = function () {
-
+      //clear loading
     }    
 
     // todo: add validations on input

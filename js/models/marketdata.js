@@ -6,7 +6,13 @@ define([], function () {
         viewData;
 
     _this.get = function(property) {
-      return (viewData[property] || "");
+      var returnVal = (viewData[property] || "");
+
+      if (returnVal === "NaN") {
+        returnVal = "n/a";
+      }
+
+      return returnVal;
     }
    
     // helper method to fetch the value of a property (supports deep chains)
@@ -33,12 +39,13 @@ define([], function () {
         "Symbol" : quote["symbol"],
         "Name" : quote["Name"],
         "AskRealTime": parseInt(quote["AskRealtime"]),
-        "AskRealTimeFraction": (quote["AskRealtime"].indexOf(".") == -1 ? 
+        "AskRealTimeFraction": ((quote["AskRealtime"] || "").indexOf(".") == -1 ? 
                                         "00" : 
-                                        quote["AskRealtime"].substring(quote["AskRealtime"].indexOf(".") + 1)),
-        "ChangeRealTime": parseFloat(quote["Change"].replace(/^[+-]/g, "")).toFixed(2),
-        "ChangeRealTimeSign": quote["Change"].indexOf("-")? "negative" : "positive",
-        "ChangeInPercent" : quote["ChangeInPercent"].replace(/^[+-]/g, ""),
+                                        (quote["AskRealtime"] || "").substring((quote["AskRealtime"] || "").indexOf(".") + 1)),
+        "ChangeRealTime": parseFloat((quote["Change"] || "").replace(/^[+-]/g, "")).toFixed(2),
+        "ChangeRealTimeSign": (quote["Change"] || "").indexOf("-") != -1 ? "negative" : 
+                                  ((quote["Change"] || "").indexOf("+") != -1 ? "positive" : "neutral"),
+        "ChangeinPercent" : (quote["ChangeinPercent"] || "").replace(/^[+-]/g, ""),
         "YearHigh": parseFloat(quote["YearHigh"]).toFixed(2),
         "Open" : parseFloat(quote["Open"]).toFixed(2),
         "DayHigh": parseFloat(quote["DaysHigh"]).toFixed(2),
@@ -47,7 +54,7 @@ define([], function () {
         "Ask" : parseFloat(quote["Ask"]).toFixed(2),
         "PE": parseFloat(quote["PERatio"]).toFixed(2),
         "MarketCap": parseFloat(quote["MarketCapitalization"]).toFixed(2),
-        "MarketCapSize": quote["MarketCapitalization"].slice(-1),
+        "MarketCapSize": (quote["MarketCapitalization"] || "").slice(-1),
         "EPS": parseFloat(quote["EarningsShare"]).toFixed(2),
         "DPS": parseFloat(quote["DividendShare"]).toFixed(2),
         "Volume": quote["Volume"]

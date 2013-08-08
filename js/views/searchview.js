@@ -13,10 +13,17 @@ define([], function () {
       $container = $(container);
       
       $input = $(container).find("input.query");
-      $input.bind("change", validateInput);
+      $input.bind("change", validateInput)
+            .bind("keypress", function(e) {
+                 var code = (e.keyCode ? e.keyCode : e.which);
+                 if(code == 13) { //Enter keycode
+                    triggerSearch.call();
+                  }
+              });
       
-      $submit = $(container).find("input.submit");
+      $submit = $(container).find("button.submit");
       $submit.bind("click", triggerSearch);
+             
     }
 
     // todo: add validations on input
