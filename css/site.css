@@ -1,0 +1,53 @@
+  body {
+    background-color: #FFFFFF;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.9em;
+    color: #3E3E3F;
+ }
+
+ .left {
+    float:left;
+ }
+
+ .clear {
+    clear:both;
+ }
+
+ .header {
+    background-color: #3E3E3F;
+    color:white;    
+    height:75px;
+    width:100%;
+    margin-top:25px;
+ }
+
+ .header .title {
+    font-size:2.4em;
+    letter-spacing: 3.5px;
+    font-weight: bold;
+    padding: 14px 0;
+ }
+
+ .header .search {
+   padding: 18px 0;   
+ }
+
+ .search .query {
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    border-radius: 7px;
+    line-height: 33px;
+ }
+
+ .search .submit {
+    background-image: url('img/search.png');
+    width:73px;
+    height:33px;
+    border:0px;
+    padding-top:5px;
+ }
+
+
+
+

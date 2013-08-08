@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <title>Ticker Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/reset.css" rel="stylesheet" media="screen">
+    <link href="css/960.css" rel="stylesheet" media="screen">        
+    <link href="css/site.css" rel="stylesheet" media="screen">
+  </head>
+  <body data-pagejs="index">
+    
+
+    <section class="header">
+      <div class='container_12'>
+        <section class="grid_7 title">
+          MARKET DATA
+        </section>
+        <section id="search" class="search grid_5">
+          <div class="left">
+            <input type="text" class="query" size="30"></input>
+          </div>
+          <div class="left">
+            <button type="submit" class="submit" ></button>
+          </div>            
+        </section>
+      </div>
+    </section>
+
+    <section id="marketData">
+      <div class='container_12'>
+        <div class="row grid_12">
+          <span class="name">Apple Inc.</span>
+          <span class="symbol">(AAPL)</span>
+        </div>
+        <div class="tile grid_4">
+           <div class="bignumber">
+             <span>415</span>
+             <span>.</span>
+             <span>54</span>
+           </div>
+           <caption>
+              Real-time price in USD
+           </caption>             
+        </div>
+        <div class="tile grid_4">
+          <div class="positive"></div>
+          <div class="bignumber">
+             <span>415</span>
+             <span>.</span>              
+           </div>
+           <caption>
+              Today's Price Change (%Change)
+           </caption>
+        </div>
+        <div class="tile grid_4">
+          <div class="bignumber">
+             <span>415</span>
+             <span>.</span>              
+           </div>
+           <caption>
+              Yearly Range
+           </caption>
+        </div>
+        <div class="grid_6">
+          <div class="itemrow">
+            <div class="title">Open</div>
+            <div class="value">409.81</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Open</div>
+            <div class="value">409.81</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Open</div>
+            <div class="value">409.81</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Open</div>
+            <div class="value">409.81</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Open</div>
+            <div class="value">409.81</div>
+          </div>
+        </div>
+        <div class="grid_6">
+          <div class="itemrow">
+            <div class="title">Open</div>
+            <div class="value">409.81</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Open</div>
+            <div class="value">409.81</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Open</div>
+            <div class="value">409.81</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Open</div>
+            <div class="value">409.81</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Open</div>
+            <div class="value">409.81</div>
+          </div>
+        </div> 
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class='container_12'>
+        <div class="grid_3">
+          © 2007-2013 Copyright
+        </div>
+        <div class="grid_2">
+          <a href="#">Terms and conditions</a>
+        </div>
+        <div class="grid_2">
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="grid_5">
+        </div>        
+      </div>
+    </section>
+    
+    <script type="text/html" id="market_data_template">
+      <div class='container'>
+        <div>
+          <span class="name">{{Name}}</span>
+          <span class="symbol">({{Symbol}})</span>
+        </div>
+      </div>
+    </script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script data-main="js/application" src="js/ext/require.js"></script>
+  </body>
+</html>
