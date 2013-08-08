@@ -21,6 +21,7 @@ define([], function () {
 
     _this.showError = function() {
       //show error
+      $container.html("Couldn't retrieve the data at this time...Please try again later.")
     }
 
     _this.preRender = function () {
