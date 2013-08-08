@@ -21,7 +21,8 @@ define([], function () {
                  if(code == 13) { //Enter keycode
                     triggerSearch.call();
                   }
-              });
+              })
+              .focus();
       
       // attach the events for the submit button
       $submit = $(container).find("button.submit");
