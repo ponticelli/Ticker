@@ -1,3 +1,4 @@
+// Responsible for fetching the required data and sending that data to the view
 define(['views/marketdataview', 'shared/marketdataretriever'], function (MarketDataView, MarketDataRetriever) {
   var MarketDataController = function(container) {
     var _this = this,

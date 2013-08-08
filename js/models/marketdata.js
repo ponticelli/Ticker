@@ -1,10 +1,14 @@
 define([], function () {
   
+  // This class is the wrapper around the RawJson that we get from the service
+  // It abstracts the details of service contract but exposes the necessary infomation needed for the view
+  // (basically acts as both Model + ViewModel)
   var MarketData = function(rawJSON) {
     var _this = this,
         rawData = rawJSON,
         viewData;
 
+    // Get the property value from view model
     _this.get = function(property) {
       var returnVal = (viewData[property] || "");
 
@@ -14,18 +18,6 @@ define([], function () {
 
       return returnVal;
     }
-   
-    // helper method to fetch the value of a property (supports deep chains)
-    // "query.results.quote.Ask" (not using for now)
-    function fetchValueFromJSON(property) {
-        var attr = property && property.split(".");
-        var result;
-        $.each(attr, function(index, element) {
-          result = (result && result[element]) || rawJSON[element];
-        });
-
-        return result;
-    };
 
     function initialize() {
       

@@ -1,4 +1,5 @@
 define(['models/marketdata'], function (MarketData) {
+  // Fetch the market data from service calls (singleton)
   var MarketDataRetriever = new function() {
     var _this = this;
         rawUrl_endPoint1 = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%3D%22{{ticker}}%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",

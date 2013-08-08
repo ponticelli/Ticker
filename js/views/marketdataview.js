@@ -1,4 +1,5 @@
 define([], function () {
+   // Responsible for rendering the Market Data UI elements
   var MarketDataView = function(container) {
     var _this = this,
         $template, $container;
@@ -23,22 +24,13 @@ define([], function () {
     }
 
     _this.preRender = function () {
-      //show loading
+      //show loading icon
     }
 
     _this.postRender = function () {
-      //clear loading
-    }    
-
-    // todo: add validations on input
-    function validateInput () {
-
+      //clear loading icon
     }
     
-    function triggerSearch () {
-      callbacks.fire($input.val());
-    }     
-
     initialize();
   }
 

@@ -1,4 +1,5 @@
 define([], function () {
+  // Responsible for handling the Search UI elements/events
   var SearchView = function(container) {
     var _this = this,
         callbacks, $container, $input, $submit;
@@ -12,6 +13,7 @@ define([], function () {
 
       $container = $(container);
       
+      // attach the events for the text box
       $input = $(container).find("input.query");
       $input.bind("change", validateInput)
             .bind("keypress", function(e) {
@@ -21,6 +23,7 @@ define([], function () {
                   }
               });
       
+      // attach the events for the submit button
       $submit = $(container).find("button.submit");
       $submit.bind("click", triggerSearch);
              
@@ -31,8 +34,12 @@ define([], function () {
 
     }
     
+    // fire the query change to the observers
     function triggerSearch () {
-      callbacks.fire($input.val());
+      var query = $input.val();
+      if (query !== "") {
+       callbacks.fire(query);
+      } 
     }     
 
     initialize();
