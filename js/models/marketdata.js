@@ -39,7 +39,7 @@ define([], function () {
         "ChangeRealTime": parseFloat(quote["Change"].replace(/^[+-]/g, "")).toFixed(2),
         "ChangeRealTimeSign": quote["Change"].indexOf("-")? "negative" : "positive",
         "ChangeInPercent" : quote["ChangeInPercent"].replace(/^[+-]/g, ""),
-        "YearRange": quote["YearRange"],
+        "YearHigh": parseFloat(quote["YearHigh"]).toFixed(2),
         "Open" : parseFloat(quote["Open"]).toFixed(2),
         "DayHigh": parseFloat(quote["DaysHigh"]).toFixed(2),
         "DayLow": parseFloat(quote["DaysLow"]).toFixed(2),

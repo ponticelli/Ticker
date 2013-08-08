@@ -57,6 +57,10 @@
     padding:20px 0;
  }
 
+ .marker {
+    border-bottom: 3px solid #9D9FA2;
+ }
+
  .tile {
     padding:20px 10px;   
  }
@@ -100,6 +104,57 @@
 
  span.negative {
     color: #EE1D23;
+ }
+
+ div.tile .caption {
+    color: #ABA48C;
+    font-size: 1.1em;
+ }
+
+ section.more_details {
+    margin: 20px 0;
+ }
+
+ .itemrow {    
+    margin: 0 20px 0 0;
+    border-bottom: 1.2px solid #9D9FA2;
+ }
+
+ .rightset .itemrow {
+     margin: 0 0 0 20px;
+ }
+
+ .itemrow:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+ div.itemrow:nth-child(even) {
+    background-color: #E6E7E9;
+ }
+
+ .itemrow .title {
+    width:68%;
+    float:left;
+    padding: 3px 0;
+ }
+
+ .itemrow .value {
+    width:28%;
+    float:left;
+    text-align: right;
+    padding: 3px 0;
+ }
+
+ .footer {
+    position: fixed;
+    bottom:20px;
+    width: 100%;
+    background-color: #E6E7E9;
+    padding:10px 0;
  }
 
 
