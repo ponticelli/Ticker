@@ -1,3 +1,7 @@
+  .grid_1,  .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9,  .grid_10, .grid_11, .grid_12, .grid_13, .grid_14, .grid_15, .grid_16 {
+    position:relative;
+  }
+
   body {
     background-color: #FFFFFF;
     font-family: Helvetica, Arial, sans-serif;
@@ -23,9 +27,9 @@
 
  .header .title {
     font-size:2.4em;
-    letter-spacing: 3.5px;
+    letter-spacing: 2px;
     font-weight: bold;
-    padding: 14px 0;
+    padding: 16px 0;
  }
 
  .header .search {
@@ -37,7 +41,7 @@
     -moz-border-radius: 7px;
     -ms-border-radius: 7px;
     border-radius: 7px;
-    line-height: 33px;
+    font-size: 1.3em;
  }
 
  .search .submit {
@@ -45,7 +49,57 @@
     width:73px;
     height:33px;
     border:0px;
-    padding-top:5px;
+    padding-top:7px;
+ }
+
+ .row {
+    border-bottom: 3px solid #9D9FA2;
+    padding:20px 0;
+ }
+
+ .tile {
+    padding:20px 10px;   
+ }
+
+ .tile:after {
+    content:'';
+    border-right: 1.5px solid #9D9FA2;
+    display: block;
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:10px;
+    margin:15px 0;
+ }
+
+ .clear_border:after {    
+    border-right: none;    
+ }
+
+ #marketData {
+    margin-top:10px;
+ }
+
+ .tickername {
+    font-size: 3em;
+ }
+
+ .symbol {
+    color:#9395A8;
+    font-size: 1.8em;
+    padding:12px 0 0 5px;
+ }
+
+ .bignumber {
+   font-size: 3em; 
+ }
+
+ span.positive {
+    color: #119546;
+ }
+
+ span.negative {
+    color: #EE1D23;
  }
 
 
