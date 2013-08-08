@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <title>Ticker Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/reset.css" rel="stylesheet" media="screen">
+    <link href="css/960.css" rel="stylesheet" media="screen">        
+    <link href="css/site.css" rel="stylesheet" media="screen">
+  </head>
+  <body data-pagejs="index">
+    <section class="header">
+      <div class='container_12'>
+        <section class="grid_7 title">
+          MARKET DATA
+        </section>
+        <section id="search" class="search grid_5">
+          <div class="left">
+            <input type="text" class="query" placeholder="Enter Ticker" size="30"></input>
+          </div>
+          <div class="left">
+            <button type="submit" class="submit" ></button>
+          </div>            
+        </section>
+      </div>
+    </section>
+
+    <section id="marketData"></section>
+
+    <section class="footer">
+      <div class='container_12'>
+        <div class="grid_3">
+          © 2007-2013 Copyright
+        </div>
+        <div class="grid_2">
+          <a href="#">Terms and conditions</a>
+        </div>
+        <div class="grid_2">
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="grid_5">
+        </div>        
+      </div>
+    </section>
+    
+    <!-- Template for the market data -->
+    <script type="text/html" id="market_data_template">
+      <div class='container_12'>
+        <div class="row grid_12">
+          <div class="tickername left">{{Name}}</div>
+          <div class="symbol left">({{Symbol}})</div>
+        </div>
+        <hr/>
+        <div class="grid_3">
+           <div class="tile">
+             <div class="bignumber">
+               <span>{{AskRealTime}}</span><span>.</span><span class="{{ChangeRealTimeSign}}">{{AskRealTimeFraction}}</span>
+             </div>
+             <div class="caption">Real-time price in USD</div>
+           </div>             
+        </div>
+        <div class="grid_6">
+          <div class="tile extra_margin">
+            <div class="{{ChangeRealTimeSign}}"></div>
+            <div class="bignumber">
+               <span>{{ChangeRealTime}}</span>
+               <span>({{ChangeinPercent}})</span>              
+             </div>
+             <div class="caption">Today's Price Change (%Change)</div>
+         </div>
+        </div>
+        <div class="grid_3">
+          <div class="tile clear_border">
+            <div class="bignumber">
+               <span>{{YearHigh}}</span>               
+             </div>
+             <div class="caption">Year High</div>
+         </div>
+        </div>
+        <div class="grid_12 marker"></div>        
+      </div>
+    </section>
+
+    <section class="more_details">
+      <div class="container_12">
+        <div class="grid_6 leftset">
+          <div class="itemrow">
+            <div class="title">Open</div>
+            <div class="value">{{Open}}</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">DayHigh</div>
+            <div class="value">{{DayHigh}}</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">DayLow</div>
+            <div class="value">{{DayLow}}</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Bid</div>
+            <div class="value">{{Bid}}</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Ask</div>
+            <div class="value">{{Ask}}</div>
+          </div>
+        </div>
+        <div class="grid_6 rightset">
+          <div class="itemrow">
+            <div class="title">PE</div>
+            <div class="value">{{PE}}</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">MarketCap({{MarketCapSize}})</div>
+            <div class="value">{{MarketCap}}</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Earnings Per Share</div>
+            <div class="value">{{EPS}}</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Dividends per Share</div>
+            <div class="value">{{DPS}}</div>
+          </div>
+          <div class="itemrow">
+            <div class="title">Volume</div>
+            <div class="value">{{Volume}}</div>
+          </div>
+        </div> 
+      </div>
+    </script>
+
+    <!-- script dependencies require and jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script data-main="js/application" src="js/ext/require.js"></script>
+  </body>
+</html>
